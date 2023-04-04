@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import com.example.superheroapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,11 +35,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
+        binding.progressBar.isVisible=true
         CoroutineScope(Dispatchers.IO).launch {
             val myResponse=retrofit.create(ApiService::class.java).getSuperHeroes(query)
             if (myResponse.isSuccessful){
                 val response = myResponse.body()
                 Log.i("jota",response.toString())
+                runOnUiThread{
+                    binding.progressBar.isVisible=false
+                }
             }else
                 Log.i("jota","no funca")
         }
