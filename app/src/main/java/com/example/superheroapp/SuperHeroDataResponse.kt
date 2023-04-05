@@ -2,7 +2,7 @@ package com.example.superheroapp
 
 import com.google.gson.annotations.SerializedName
 
-data class SuperHeroDataResponse(
+data class SuperheroDataResponse(
     @SerializedName("response") val response: String,
     @SerializedName("results") val superheroes: List<SuperheroItemResponse>,
 )
