@@ -10,6 +10,12 @@
 
 
     <color name="superhero_item_name">#A10B1CB5</color>
+    <color name="intelligence">#01DEFB</color>
+    <color name="power">#075FF8</color>
+    <color name="durability">#2ACC05</color>
+    <color name="strength">#FB0026</color>
+    <color name="combat">#FB7500</color>
+    <color name="speed">#FAD905</color>
 
 
 
